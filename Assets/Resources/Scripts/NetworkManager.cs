@@ -6,7 +6,7 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
+    public GameObject trackPrefab;
     void Start()
     {
         ConnectToServer();
@@ -32,11 +32,25 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined a room");
         base.OnJoinedRoom();
+        SpawnTrackForPlayer();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Debug.Log("new player joined the room");
         base.OnPlayerEnteredRoom(newPlayer);
+    }
+
+    private void SpawnTrackForPlayer()
+    {
+        int playerID = PhotonNetwork.LocalPlayer.ActorNumber;
+
+        Vector3 basePosition = new Vector3(79, 18, -30);
+
+        Vector3 spawnOffset = new Vector3(0, 0, playerID * 10);
+
+        GameObject trackInstance = Instantiate(trackPrefab);
+        trackInstance.transform.position = basePosition + spawnOffset;
+        trackInstance.transform.rotation = Quaternion.identity; 
     }
 }
