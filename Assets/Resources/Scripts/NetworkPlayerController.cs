@@ -31,20 +31,23 @@ public class NetworkPlayerController : MonoBehaviourPun
     {
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rotation);
-
+//        Debug.Log("MapPosition " + position.ToString() + " rotation " + rotation.ToString());
         target.position = position;
-        target.rotation = rotation;
+        target.rotation = rotation;   
     }
 
     [PunRPC]
     void SyncPlayerTransform(Vector3 headPosition, Vector3 leftHandPosition, Vector3 rightHandPosition, Quaternion headRotation, Quaternion leftHandRotation, Quaternion rightHandRotation)
     {
         //synch position for other players
+        
+        Debug.Log("SyncPlayerTransform");
         head.position = headPosition;
         leftHand.position = leftHandPosition;
         rightHand.position = rightHandPosition;
         head.rotation = headRotation;
         leftHand.rotation = leftHandRotation;
         rightHand.rotation = rightHandRotation;
+    
     }
 }
