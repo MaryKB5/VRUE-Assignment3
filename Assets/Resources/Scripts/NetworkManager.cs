@@ -7,6 +7,7 @@ using Photon.Realtime;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public GameObject trackPrefab;
+    
     void Start()
     {
         ConnectToServer();
@@ -29,8 +30,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         roomOptions.IsOpen = true;
     
         PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
-
-        
     }
 
     public override void OnJoinedRoom()
@@ -38,7 +37,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("NetworkManager Joined a room");
         base.OnJoinedRoom();
 
-        SpawnTrackForPlayer(PhotonNetwork.LocalPlayer);
+        foreach (var player in PhotonNetwork.CurrentRoom.Players.Values)
+        {
+            SpawnTrackForPlayer(player);
+        }
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -46,9 +48,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("new player joined the room");
         base.OnPlayerEnteredRoom(newPlayer);
 
-        //if (PhotonNetwork.IsMasterClient) {
-            SpawnTrackForPlayer(newPlayer);
-        //}
+        
+        SpawnTrackForPlayer(newPlayer);        
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        base.OnPlayerLeftRoom(otherPlayer);
+
+        var track = GameObject.Find("Track for Player " + otherPlayer.ActorNumber);
+        Destroy(track);        
     }
 
     private void SpawnTrackForPlayer(Player player)

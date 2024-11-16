@@ -30,6 +30,7 @@ public class CustomContinuousMoveProvider : ActionBasedContinuousMoveProvider
     {  
         string collidedObjectName = collision.collider.transform.name;
         Debug.Log("OnCollissionEnter " + collidedObjectName);
+        
         if (collision.collider.CompareTag("Floor")) {
             Debug.Log("ignored collission with " + collidedObjectName);
             return;
@@ -38,7 +39,7 @@ public class CustomContinuousMoveProvider : ActionBasedContinuousMoveProvider
         
         this.collision = true;
         //moveSpeed = 10f;
-        //input = Vector2.down;
+        input = Vector2.down;
     }
 
     void OnCollisionExit(Collision collisionInfo)
