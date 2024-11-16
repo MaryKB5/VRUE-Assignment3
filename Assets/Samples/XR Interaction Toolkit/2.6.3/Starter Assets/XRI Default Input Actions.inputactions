@@ -443,6 +443,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Device Pose",
+                    "type": "Value",
+                    "id": "7f99cea5-78af-4d5c-b399-12c2a493e1aa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Accelerometer",
+                    "type": "Value",
+                    "id": "599d07ed-e4b7-4af0-88dc-51efb003383b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -674,6 +692,28 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Grip Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e284a16-3ae2-49a7-a00c-47043acf8af4",
+                    "path": "<XRController>{LeftHand}/devicePose",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Device Pose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c010001-843f-4a23-b626-46ab5a65edcf",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1239,6 +1279,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Device Pose",
+                    "type": "PassThrough",
+                    "id": "2c2e1bd1-09e0-4bcc-ae17-cada5a504ef5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1470,6 +1519,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Grip Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60aab341-4cf4-4edf-b51f-7be3e5c2ffd5",
+                    "path": "<XRController>{RightHand}/devicePose",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Device Pose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
