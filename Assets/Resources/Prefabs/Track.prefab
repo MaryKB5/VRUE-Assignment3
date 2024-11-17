@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7864127976313432576}
   - component: {fileID: 7512129543700188199}
+  - component: {fileID: -6351873909743876411}
   m_Layer: 0
   m_Name: Track
   m_TagString: Untagged
@@ -58,6 +59,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: -6351873909743876411}
   - {fileID: 3359231684632915034}
   - {fileID: 2990470045012688016}
   - {fileID: 6392714718678577751}
@@ -74,6 +76,22 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-6351873909743876411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864127976313432577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &7864127976329576212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,6 +2039,7 @@ GameObject:
   - component: {fileID: 7864127978013052165}
   - component: {fileID: 7864127978013052410}
   - component: {fileID: 8443489238326145590}
+  - component: {fileID: 6781800480991400291}
   m_Layer: 0
   m_Name: Finishing Line
   m_TagString: Floor
@@ -2122,6 +2141,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6781800480991400291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864127978013052411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f322fb7300158be48ba35aa06aeb6297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  win: {fileID: 914483461624090032, guid: 62a721a90054a8949921c60cad6d8093, type: 3}
+  lose: {fileID: 2882485379227092300, guid: 3ff26c9eaa327e04095b5c6b789b80b8, type: 3}
 --- !u!1 &7864127978082452487
 GameObject:
   m_ObjectHideFlags: 0

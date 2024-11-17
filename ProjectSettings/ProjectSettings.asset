@@ -819,7 +819,12 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -834,7 +839,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 20543418-1bfa-4e2e-abd6-9fdc000e6eea
+  cloudProjectId: d7ade659-1d42-4c86-9115-47b247fbfa68
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames:
   - Very Low
@@ -843,8 +848,8 @@ PlayerSettings:
   - High
   - Very High
   - Ultra
-  projectName: Tutorial1WS24
-  organizationId: hbrument
+  projectName: VRUE-Assignment3
+  organizationId: unity_53d0a72c172cf433954a
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

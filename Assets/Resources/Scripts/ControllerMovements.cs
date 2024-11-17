@@ -1,21 +1,21 @@
-using System;
+using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit;
 
-public class ControllerMovements : MonoBehaviour 
+public class ControllerMovements : MonoBehaviourPun
 {
-    public float recognizedMovementLimit = 0.25f;
+    public float recognizedMovementLimit = 0.66f;
     public float velocity = 10.0f;
-    public ActionBasedController leftController;
+    // public ActionBasedController leftController;
     private UnityEngine.XR.InputDevice leftDevice;
     public InputActionReference leftDevicePose;
-    public ActionBasedController rightController;
+    // public ActionBasedController rightController;
     private UnityEngine.XR.InputDevice rightDevice;
 
-    private LocomotionSystem locomotionSystem;
+    
     private CustomContinuousMoveProvider moveProvider;
 
     public InputActionReference rightDevicePose;
@@ -23,8 +23,8 @@ public class ControllerMovements : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        locomotionSystem = gameObject.GetComponentInChildren<LocomotionSystem>();
-        moveProvider = gameObject.GetComponent<CustomContinuousMoveProvider>();
+        moveProvider = GetComponent<CustomContinuousMoveProvider>();
+        
         
         leftDevice = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);    
         rightDevice = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(XRNode.RightHand);    
@@ -35,19 +35,22 @@ public class ControllerMovements : MonoBehaviour
     
     // Update is called once per frame
     void Update() {
-    	if (Time.time >= nextUpdate) { // If the next update is reached
-    		//Debug.Log(Time.time + ">=" + nextUpdate);
-    		nextUpdate = Mathf.FloorToInt(Time.time) + 0.1f;
-    		UpdateEvery();
-    	}
+        if (photonView.IsMine) {
+            if (Time.time >= nextUpdate) { // If the next update is reached
+                //Debug.Log(Time.time + ">=" + nextUpdate);
+                nextUpdate = Mathf.FloorToInt(Time.time) + 0.1f;
+                UpdateEvery();
+            }
+        }
     }
     
     
-    void UpdateEvery() {
-        Vector3 leftPosition = leftController.transform.position;
+    private void UpdateEvery() {
+        //Debug.Log("ControllerMovements is Mine Player Number " + PhotonNetwork.LocalPlayer.GetPlayerNumber());
+        //Vector3 leftPosition = leftController.transform.position;
         PoseState leftPoseState = leftDevicePose.action.ReadValue<PoseState>();
 
-        Vector3 rightPosition = rightController.transform.position;
+        //Vector3 rightPosition = rightController.transform.position;
         PoseState rightPoseState = rightDevicePose.action.ReadValue<PoseState>();
         float velocityFactor = Mathf.Abs(leftPoseState.velocity.y) + Mathf.Abs(rightPoseState.velocity.y);
         if (velocityFactor > recognizedMovementLimit) {

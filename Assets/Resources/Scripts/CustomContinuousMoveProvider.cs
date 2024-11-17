@@ -1,19 +1,17 @@
-using System;
-using System.Linq;
-using Unity.VisualScripting;
-using Unity.XR.CoreUtils;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class CustomContinuousMoveProvider : ActionBasedContinuousMoveProvider
 {
     public Vector2 input;
+    private PhotonView photonView;
 
     // Start is called before the first frame update
     void Start()
     {
         input = Vector2.zero;
-
+        photonView = GetComponent<PhotonView>();
     }
 
     private bool collision = false;
@@ -40,12 +38,12 @@ public class CustomContinuousMoveProvider : ActionBasedContinuousMoveProvider
         this.collision = true;
         //moveSpeed = 10f;
         input = Vector2.down;
-    }
+        }
 
     void OnCollisionExit(Collision collisionInfo)
     {
-        Debug.Log("OnCollissionExit");
-        this.collision = false;
+        Debug.Log("OnCollissionExit ");
+        this.collision = false;        
     }
 
     

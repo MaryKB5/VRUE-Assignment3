@@ -23,7 +23,7 @@ public class NetworkPlayerController : MonoBehaviourPun
             MapPosition(leftHand, XRNode.LeftHand);
             MapPosition(rightHand, XRNode.RightHand);
             
-            photonView.RPC("SyncPlayerTransform", RpcTarget.Others, head.position, leftHand.position, rightHand.position, head.rotation, leftHand.rotation, rightHand.rotation);
+           // photonView.RPC("SyncPlayerTransform", RpcTarget.Others, PhotonNetwork.LocalPlayer.ActorNumber, head.position, leftHand.position, rightHand.position, head.rotation, leftHand.rotation, rightHand.rotation);
         }
     }
 
@@ -37,17 +37,19 @@ public class NetworkPlayerController : MonoBehaviourPun
     }
 
     [PunRPC]
-    void SyncPlayerTransform(Vector3 headPosition, Vector3 leftHandPosition, Vector3 rightHandPosition, Quaternion headRotation, Quaternion leftHandRotation, Quaternion rightHandRotation)
+    void SyncPlayerTransform(int actorNumber, Vector3 headPosition, Vector3 leftHandPosition, Vector3 rightHandPosition, Quaternion headRotation, Quaternion leftHandRotation, Quaternion rightHandRotation)
     {
         //synch position for other players
-        
-        Debug.Log("SyncPlayerTransform");
-        head.position = headPosition;
-        leftHand.position = leftHandPosition;
-        rightHand.position = rightHandPosition;
-        head.rotation = headRotation;
-        leftHand.rotation = leftHandRotation;
-        rightHand.rotation = rightHandRotation;
-    
+      /*  if (PhotonNetwork.LocalPlayer.ActorNumber == actorNumber) {
+            Debug.Log("SyncPlayerTransform for actorNumber " + actorNumber + " in " + PhotonNetwork.LocalPlayer.ActorNumber);
+            head.position = headPosition;
+            leftHand.position = leftHandPosition;
+            rightHand.position = rightHandPosition;
+            head.rotation = headRotation;
+            leftHand.rotation = leftHandRotation;
+            rightHand.rotation = rightHandRotation;
+        } else {
+            Debug.Log("Ignored SyncPlayerTransform for actorNumber " + actorNumber + " in " + PhotonNetwork.LocalPlayer.ActorNumber);
+        }*/
     }
 }

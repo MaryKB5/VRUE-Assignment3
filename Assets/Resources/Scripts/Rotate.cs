@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class Rotate : MonoBehaviourPun
 {
     public float rotationSpeed = 30f;
 

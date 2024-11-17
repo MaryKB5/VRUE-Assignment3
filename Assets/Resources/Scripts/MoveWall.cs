@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class MoveWall : MonoBehaviour
+public class MoveWall : MonoBehaviourPun
 {
     public float moveDistance = 2.0f;
     public float moveSpeed = 2.0f;
