@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 7864127976501353959}
   - component: {fileID: 7864127976501353956}
   - component: {fileID: 7864127976501353957}
+  - component: {fileID: 8579469227429054172}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -318,8 +319,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.02, y: 10, z: 1.02}
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!54 &8579469227429054172
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864127976501353947}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &7864127976941316829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1354,7 @@ GameObject:
   - component: {fileID: 7864127977296683560}
   - component: {fileID: 7864127977296683561}
   - component: {fileID: 7864127977296683566}
+  - component: {fileID: 6426846815488324091}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -1420,8 +1438,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.02, y: 10, z: 1.02}
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!54 &6426846815488324091
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864127977296683564}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &7864127977446664537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +1861,7 @@ GameObject:
   - component: {fileID: 7864127977821518640}
   - component: {fileID: 7864127977821518641}
   - component: {fileID: 7864127977821518646}
+  - component: {fileID: 7135137896016534406}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -1910,8 +1945,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.02, y: 10, z: 1.02}
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!54 &7135137896016534406
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864127977821518644}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &7864127977893816077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,6 +2385,7 @@ GameObject:
   - component: {fileID: 7864127978206153482}
   - component: {fileID: 7864127978206153483}
   - component: {fileID: 7864127978206153480}
+  - component: {fileID: 1105251375225189182}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -2417,8 +2469,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.02, y: 10, z: 1.02}
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!54 &1105251375225189182
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864127978206153486}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &7864127978247627023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,6 +2499,7 @@ GameObject:
   - component: {fileID: 7864127978247627019}
   - component: {fileID: 7864127978247627016}
   - component: {fileID: 7864127978247627017}
+  - component: {fileID: 4905754549290612502}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -2514,8 +2583,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.02, y: 10, z: 1.02}
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!54 &4905754549290612502
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864127978247627023}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &7864127978339777667
 GameObject:
   m_ObjectHideFlags: 0

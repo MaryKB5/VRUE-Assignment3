@@ -24,6 +24,14 @@ public class CustomContinuousMoveProvider : ActionBasedContinuousMoveProvider
         return input;
     }
     
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        string collidedObjectName = hit.collider.transform.name;
+        Debug.Log("OnControllerColliderHit " + collidedObjectName);
+
+    }
+/*
     void OnCollisionEnter(Collision collision)
     {  
         string collidedObjectName = collision.collider.transform.name;
@@ -38,13 +46,13 @@ public class CustomContinuousMoveProvider : ActionBasedContinuousMoveProvider
         this.collision = true;
         //moveSpeed = 10f;
         input = Vector2.down;
-        }
+    }
 
     void OnCollisionExit(Collision collisionInfo)
     {
         Debug.Log("OnCollissionExit ");
         this.collision = false;        
     }
-
+*/
     
 }
